@@ -1,4 +1,6 @@
-# README
+
+# BetterReads
+An example application used to demonstrate taking a web app from running locally to a live production environment.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
