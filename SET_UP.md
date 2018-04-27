@@ -38,6 +38,12 @@ gem install rails
 
 That will install quite a few files and packages, but don't worry, it's all a part of the process. :)
 
+Next, we'll install bundler, a handy library that we'll use to install our app specific dependences later.  You can use the following command in your terminal:
+
+```
+gem install bundler
+```
+
 The database we'll be using for our web-app is PostGreSQL.  You can find a link to download it [here](https://www.postgresql.org/).
 
 In the workshop, we'll be using ngrok and Google Chrome.  Both programs can be downloaded using the following links:
