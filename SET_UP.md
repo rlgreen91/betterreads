@@ -48,3 +48,29 @@ In the workshop, we'll be using ngrok and Google Chrome.  Both programs can be d
 Note that you do not need to sign up for an account with ngrok - that is completely voluntary.  The application will still work without a signed in user.
 
 Finally, at the end of the workshop, we'll deploy our web app using Heroku.  For this, we will need to sign up for an account, which you can do [here](https://www.heroku.com/).  Once you've created an account, download the Heroku CLI, which we'll use during the workshop.  The CLI can be found [here](https://devcenter.heroku.com/articles/heroku-cli).
+
+
+## Repo Configuration
+Using your command line, navigate to the location where you will store your local copy of the database.  For example, in your terminal, you can use the `cd` command to open the folder where you will store the copy:
+
+```
+cd /Users/my_username
+```
+
+Then, use the following command to clone a copy of the repo to your local environment:
+
+```
+git clone https://github.com/rlgreen91/betterreads.git
+```
+
+Once the clone operation is complete, navigate into the betterreads folder using the following command:
+
+```
+cd betterreads
+```
+
+Use the following command to install dependencies:
+
+```
+bundle install
+```
