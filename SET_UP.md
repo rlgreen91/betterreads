@@ -178,3 +178,33 @@ password: <%= ENV['BETTERREADS_PASSWORD'] %>
 host: localhost
 port: 5432
 ```
+
+## Database
+
+Let's complete our local database setup.  first, create the development database using the following command:
+
+```
+rake db:create
+```
+
+Then, apply the schema and migrations to the databases using the following command:
+
+```
+rake db:migrate
+```
+
+Finally, we'll seed the database using the following command:
+
+```
+rake db:seed
+```
+
+## Finish
+
+Now, everything should be completely set up!  Run the app locally on your computer using the following command:
+
+```
+rails server
+```
+
+You should be able to view and interact with the site on http://localhost:3000.  And with that, you're set for the workshop!
