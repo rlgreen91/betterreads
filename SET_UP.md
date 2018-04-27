@@ -74,3 +74,101 @@ Use the following command to install dependencies:
 ```
 bundle install
 ```
+
+## PostGreSQL
+
+Now we'll set up our database user for the web app.  Choose the appropriate instruction set based on the operating system of your local environment.
+
+### Mac/Linux
+
+Start the postgres console in your terminal using the following command:
+
+```
+psql -p 5432 -h localhost -U postgres
+```
+
+Next, create a user `betterreads` with the password `password` or whatever password you prefer, using the following command:
+
+```
+CREATE USER betterreads WITH PASSWORD 'password';
+```
+
+Exit the console using the following command:
+
+```
+\q
+```
+
+Now, we'll save the password as an environment variable, which will allow us to provide the password without having to type it in each time in multiple places.  Use the following command in your terminal to open your `.bashrc` file:
+
+```
+vi ~/.bashrc
+```
+
+That will open an editor, vi in your terminal - in fact, it'll open the above file using the vi editor.  Use the down arrow to go to the end of the file.  Then, press the `i` key to trigger Insert Mode, which will allow you to enter text into the file.  Press enter to begin a new line, and put the following text:
+
+```
+export BETTERREADS_PASSWORD='password'
+```
+
+Then, to leave Insert Mode, press the Escape key.  Finall, press the following three keys in sequence to save your changes - `:wq`.  This will also close the editor, and you should be back to the normal view in your terminal.
+
+To make your terminal start using the environment variable immediately, use the following command:
+
+```
+source ~/.bashrc
+```
+
+### Windows
+
+Note that the following guidelines are written for a \*nix based terminal, like Git Bash, Cygwin, or Windows Subsystem for Linux.  Some portions may vary if you are using Command Prompt or Powershell - alternatives will be listed below.
+
+Start the postgres console in your terminal using the following command:
+
+```
+psql -p 5432 -h localhost -U postgres
+```
+
+Next, create a user `betterreads` with the password `password` or whatever password you prefer, using the following command:
+
+```
+CREATE USER betterreads WITH PASSWORD 'password';
+```
+
+Exit the console using the following command:
+
+```
+\q
+```
+
+Now, we'll save the password as an environment variable, which will allow us to provide the password without having to type it in each time in multiple places.  Use the following command in your terminal to open your `.bashrc` file:
+
+```
+vi ~/.bashrc
+```
+
+That will open an editor, vi in your terminal - in fact, it'll open the above file using the vi editor.  Use the down arrow to go to the end of the file.  Then, press the `i` key to trigger Insert Mode, which will allow you to enter text into the file.  Press enter to begin a new line, and put the following text:
+
+```
+export BETTERREADS_PASSWORD='password'
+```
+
+Then, to leave Insert Mode, press the Escape key.  Finall, press the following three keys in sequence to save your changes - `:wq`.  This will also close the editor, and you should be back to the normal view in your terminal.
+
+To make your terminal start using the environment variable immediately, use the following command:
+
+```
+source ~/.bashrc
+```
+
+If you are using Command Prompt or Powershell, you may have to use the pgadmin program to create the database.  The program can be found by navigating to the PostGreSQL folder within the Start Menu.  Additionally, you may have to use the Control Panel to add the environment variable.  To do so, follow the instructions listed [here](https://www.computerhope.com/issues/ch000549.htm).
+
+Finally, uncomment the following lines under the development section of `config/database.yml`:
+
+```
+username: betterreads
+password: <%= ENV['BETTERREADS_PASSWORD'] %>
+
+host: localhost
+port: 5432
+```
