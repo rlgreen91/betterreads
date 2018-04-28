@@ -96,7 +96,7 @@ psql -p 5432 -h localhost -U postgres
 Next, create a user `betterreads` with the password `password` or whatever password you prefer, using the following command:
 
 ```
-CREATE USER betterreads WITH PASSWORD 'password';
+CREATE USER betterreads SUPERUSER WITH PASSWORD 'password';
 ```
 
 Exit the console using the following command:

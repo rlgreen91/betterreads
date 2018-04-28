@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+authors = 3.times do
+  Author.create([{name: Faker::Book.author,
+                  birthplace: "Houston, Texas",
+                  birth_year: 1960}])
+end
+
+Book.create(name: Faker::Book.title,
+            author: Author.first,
+            description: Faker::Lorem.sentence,
+            publication_year: 2000)
+
+Book.create(name: Faker::Book.title,
+            author: Author.first,
+            description: Faker::Lorem.sentence,
+            publication_year: 2000)
+
+Book.create(name: Faker::Book.title,
+            author: Author.last,
+            description: Faker::Lorem.sentence,
+            publication_year: 2000)
